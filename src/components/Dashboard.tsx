@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const user = {
   name: "Tom Cook",
@@ -35,14 +36,14 @@ export default function Dashboard() {
                 <div className="flex h-16 justify-between">
                   <div className="flex">
                     <div className="flex flex-shrink-0 items-center">
-                      <img
+                      <Image
                         className="block h-8 w-auto lg:hidden"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                        src="https://tailwindui.com/Image/logos/mark.svg?color=indigo&shade=600"
                         alt="Your Company"
                       />
-                      <img
+                      <Image
                         className="hidden h-8 w-auto lg:block"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                        src="https://tailwindui.com/Image/logos/mark.svg?color=indigo&shade=600"
                         alt="Your Company"
                       />
                     </div>
@@ -78,7 +79,7 @@ export default function Dashboard() {
                       <div>
                         <Menu.Button className="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                           <span className="sr-only">Open user menu</span>
-                          <img
+                          <Image
                             className="h-8 w-8 rounded-full"
                             src={user.imageUrl}
                             alt=""
@@ -156,7 +157,7 @@ export default function Dashboard() {
                 <div className="border-t border-gray-200 pb-3 pt-4">
                   <div className="flex items-center px-4">
                     <div className="flex-shrink-0">
-                      <img
+                      <Image
                         className="h-10 w-10 rounded-full"
                         src={user.imageUrl}
                         alt=""
