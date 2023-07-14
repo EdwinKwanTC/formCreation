@@ -25,7 +25,11 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Dashboard() {
+type Props = {
+  children: React.ReactNode;
+};
+
+const AdminPanelLayout = ({ children }: Props) => {
   return (
     <>
       <div className="min-h-full">
@@ -214,12 +218,12 @@ export default function Dashboard() {
             </div>
           </header>
           <main>
-            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-              {/* Your content */}
-            </div>
+            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
           </main>
         </div>
       </div>
     </>
   );
-}
+};
+
+export default AdminPanelLayout;

@@ -1,7 +1,12 @@
-import Dashboard from "../../components/Dashboard";
+import AdminPanel from "~/components/AdminPanel";
+import AdminPanelLayout from "~/components/AdminPanel/AdminPanelLayout";
 
 const DashboardHomePage = () => {
-  return <Dashboard />;
+  return (
+    <AdminPanelLayout>
+      <AdminPanel />
+    </AdminPanelLayout>
+  );
 };
 
 export default DashboardHomePage;
