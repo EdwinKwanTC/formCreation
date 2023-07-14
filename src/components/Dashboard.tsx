@@ -38,13 +38,17 @@ export default function Dashboard() {
                     <div className="flex flex-shrink-0 items-center">
                       <Image
                         className="block h-8 w-auto lg:hidden"
-                        src="https://tailwindui.com/Image/logos/mark.svg?color=indigo&shade=600"
+                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                         alt="Your Company"
+                        width={32}
+                        height={32}
                       />
                       <Image
                         className="hidden h-8 w-auto lg:block"
-                        src="https://tailwindui.com/Image/logos/mark.svg?color=indigo&shade=600"
+                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                         alt="Your Company"
+                        width={32}
+                        height={32}
                       />
                     </div>
                     <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
@@ -83,6 +87,8 @@ export default function Dashboard() {
                             className="h-8 w-8 rounded-full"
                             src={user.imageUrl}
                             alt=""
+                            width={32}
+                            height={32}
                           />
                         </Menu.Button>
                       </div>
@@ -161,6 +167,8 @@ export default function Dashboard() {
                         className="h-10 w-10 rounded-full"
                         src={user.imageUrl}
                         alt=""
+                        width={40}
+                        height={40}
                       />
                     </div>
                     <div className="ml-3">
