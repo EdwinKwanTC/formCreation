@@ -1,17 +1,21 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
 type Props = {
+  openTools: boolean
+  handleToolsToggle: (bol: boolean) => void
   children: React.ReactNode
 }
 
-export default function SlideOver({ children }: Props) {
-  const [open, setOpen] = useState(true)
-
+export default function SlideOver({
+  openTools,
+  handleToolsToggle,
+  children,
+}: Props) {
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
+    <Transition.Root show={openTools} as={Fragment}>
+      <Dialog as="div" className="relative z-10" onClose={handleToolsToggle}>
         <div className="fixed inset-0" />
 
         <div className="fixed inset-0 overflow-hidden">
@@ -31,13 +35,13 @@ export default function SlideOver({ children }: Props) {
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
-                          Panel title
+                          Select Input
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
                             type="button"
                             className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                            onClick={() => setOpen(false)}
+                            onClick={() => handleToolsToggle(false)}
                           >
                             <span className="sr-only">Close panel</span>
                             <XMarkIcon className="h-6 w-6" aria-hidden="true" />

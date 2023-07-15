@@ -1,12 +1,13 @@
 type Size = 'sm' | 'md' | 'lg'
 
 type Props = {
-  label: string
-  size: Size
+  label?: string
+  size?: Size
+  className?: string
   onClick?: () => void
 }
 
-const Button = ({ label, size, onClick }: Props) => {
+const Button = ({ label, size = 'md', className, onClick, ...rest }: Props) => {
   const handleSize = (size: Size) => {
     switch (size) {
       case 'sm':
@@ -26,7 +27,8 @@ const Button = ({ label, size, onClick }: Props) => {
       type="button"
       className={`rounded bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${handleSize(
         size
-      )}`}
+      )} ${className}`}
+      {...rest}
     >
       {label}
     </button>
