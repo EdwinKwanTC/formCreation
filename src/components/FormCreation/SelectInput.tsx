@@ -1,3 +1,12 @@
+import { useRef } from 'react'
+import TextField from '~/components/Base/TextField'
+
 export default function SelectInput() {
-  return <div>input</div>
+  const ref = useRef(null)
+
+  return (
+    <div>
+      <TextField value={''} onChange={() => {}} />
+    </div>
+  )
 }
