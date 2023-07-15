@@ -6,16 +6,16 @@ import '~/styles/globals.css'
 import Layout from 'src/components/Layout'
 
 const MyApp: AppType<{ session: Session | null }> = ({
-    Component,
-    pageProps: { session, ...pageProps },
+  Component,
+  pageProps: { session, ...pageProps },
 }) => {
-    return (
-        <SessionProvider session={session}>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
-        </SessionProvider>
-    )
+  return (
+    <SessionProvider session={session}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SessionProvider>
+  )
 }
 
 export default api.withTRPC(MyApp)
