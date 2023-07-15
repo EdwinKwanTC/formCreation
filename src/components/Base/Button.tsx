@@ -27,7 +27,7 @@ const Button = ({ label, size = 'md', className, onClick, ...rest }: Props) => {
       type="button"
       className={`rounded bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${handleSize(
         size
-      )} ${className}`}
+      )} ${className ? className : ''}`}
       {...rest}
     >
       {label}
